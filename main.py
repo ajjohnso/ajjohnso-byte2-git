@@ -1,3 +1,14 @@
+# Imports
+import os
+import jinja2
+import webapp2
+import logging
+
+JINJA_ENVIRONMENT = jinja2.Environment(
+    loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
+    extensions=['jinja2.ext.autoescape'],
+    autoescape=True)
+
 from flask import Flask
 app = Flask(__name__)
 app.config['DEBUG'] = True
